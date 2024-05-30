@@ -1,0 +1,78 @@
+{% extends 'master.html' %}
+
+{% block title %}
+  Course Page
+{% endblock %}
+
+{% block content %}
+    {% if schedule_message %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 scheduleMess">
+            <div class="alert scheduleMessage alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+               {{ schedule_message }}
+<button type="button" class="closeButton" data-bs-dismiss="alert" aria-label="Close">
+       <i class="bi bi-x"></i>
+</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+<h1 class="courses">Courses</h1>
+
+<form class="d-flex searchCourse" role="search" method="GET" action="{% url 'courses' %}">
+    <div class="input-group">
+        <button class="btn icon" type="button" id="searchButton"><i class="bi bi-search"></i></button>
+        <input class="form-control me-2 search-input search-course" type="search" placeholder="Search..." aria-label="Search" name="searchCou">
+    </div>
+</form>
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4 mb-5" style="padding: 0 0 100px 0;">
+    {% for course in courses %}
+    <div class="col">
+        <div class="card card-back h-100">
+            {% load static %}
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{ course.course_name }}</strong></h5>
+                <h6 class="card-subtitle mb-3">{{ course.course_code }}</h6>
+                <p class="card-text"><strong>Instructor:</strong> {{ course.instructor_name }}</p>
+                <p class="card-text"><strong>Description:</strong> {{ course.description }}</p>
+                <p class="card-text"><strong>Prerequisites:</strong> {{ course.prerequisites }}</p>
+                <p class="card-text"><strong>Available Spots:</strong> {{ course.available_spots }} / {{ course.capacity }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="d-flex justify-content-start">
+                        <span style="margin-right: 15px; font-size: 12px;color: black;"><strong>Day:</strong> {{ course.schedule.days }}</span>
+                        <span style="margin-right: 15px; font-size: 12px;color: black;"><strong>Start:</strong> {{ course.schedule.startTime|time:"H:i" }}</span>
+                        <span style="margin-right: 15px; font-size: 12px;color: black;"><strong>End:</strong> {{ course.schedule.endTime|time:"H:i" }}</span>
+                        <span style="margin-right: 15px; font-size: 12px;color: black;"><strong>Room:</strong> {{ course.schedule.roomNo }}</span>
+                </small>
+            </div>
+
+            <div class="card-footer">
+
+                <form action="{% url 'addToSchedule' %}" method="POST">
+    {% csrf_token %}
+
+    <input type="hidden" name="course_code" value="{{ course.course_code }}">
+    <button class="addSchedule" type="submit">Add to Schedule</button>
+</form>
+
+
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-md-12 noCourses">
+        <p>No courses found. <a class="link" href="{% url 'courses' %}">Show all courses</a></p>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

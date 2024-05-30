@@ -1,0 +1,142 @@
+body {
+    background-color: #FAF8F7; /* Light background color */
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    height: 460px;
+    width: 460px;
+    position: relative;
+    top: 90px;
+    border: 2px solid rgba(46, 46, 44, 0.1); /* Dark border color */
+    border-radius: 10px;
+}
+
+.container * {
+    font-family: 'Times New Roman', Times, serif;
+    color: #2E2E2C; /* Dark text color */
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.container img {
+    display: block;
+    width: 55%;
+    height: auto;
+    position: relative;
+    top: 20px;
+    left: 100px;
+    margin-bottom: 30px;
+}
+
+.container .List {
+    display: flex;
+}
+
+.container .List .Link {
+    display: inline;
+    position: relative;
+    left: 150px;
+    margin-right: 60px;
+    cursor: pointer;
+}
+
+.container .List .Link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2E2E2C; /* Dark underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.container .List .active-link::after {
+    width: 60%;
+}
+
+.signupForm,
+.loginForm {
+    display: none;
+}
+
+.active-form {
+    display: block;
+}
+
+.loginForm input {
+    position: relative;
+    background-color: #EBEBEB; /* Light background color for input */
+    border-color: #EBEBEB; /* Light border color for input */
+    margin-top: 25px;
+    height: 35px;
+    border-radius: 5px;
+    left: 85px;
+    width: 60%;
+    color: #2E2E2C; /* Dark text color for input */
+}
+
+.signupForm input {
+    position: relative;
+    background-color: #EBEBEB; /* Light background color for input */
+    border-color: #EBEBEB; /* Light border color for input */
+    margin-top: 15px;
+    height: 30px;
+    border-radius: 5px;
+    left: 85px;
+    width: 60%;
+    color: #2E2E2C; /* Dark text color for input */
+}
+
+.loginForm button,
+.signupForm button {
+    font-size: 16px;
+    background-color: #2E2E2C; /* Dark background color for button */
+    position: relative;
+    left: 180px;
+    width: 90px;
+    height: 30px;
+    margin-top: 25px;
+    transition: transform 0.8s ease, box-shadow 0.5s ease;
+    border: #2E2E2C; /* Dark border color for button */
+    border-radius: 10px;
+    color: #EBEBEB; /* Light text color for button */
+}
+
+.signupForm button {
+    margin-top: 20px !important;
+}
+
+.loginForm button:hover,
+.signupForm button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #2E2E2C; /* Dark shadow color */
+    cursor: pointer;
+}
+
+.p1 {
+    position: relative;
+    left: 130px;
+    top: 25px;
+    font-size: 15px;
+}
+
+.p2 {
+    position: relative;
+    left: 125px;
+    font-size: 15px;
+}
+
+.p1 span,
+.p2 span {
+    color: #2E2E2C; /* Dark text color for spans */
+    cursor: pointer;
+}
+
+.p1 span:hover,
+.p2 span:hover {
+    text-decoration: underline;
+}

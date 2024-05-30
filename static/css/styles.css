@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    background-color: #2E2E2C !important;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #2E2E2C;
+
+}
+
+.navbar .nav-link {
+    color: #EBEBEB !important;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #FAF8F7 !important;
+}
+
+.navbar .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #EBEBEB;
+    color: #2E2E2C;
+}
+
+/* .navbar-brand img {
+    height: 50px;
+} */
+
+.footer {
+    background-color: #EBEBEB;
+    color: #EBEBEB;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer .text-muted {
+    color: #EBEBEB !important;
+}
+
+
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    background-color: #2E2E2C;
+    color: #EBEBEB;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #EBEBEB;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #FAF8F7;
+    color: #2E2E2C;
+}
+
+/* Utility Classes */
+.mt-auto {
+    margin-top: auto;
+}
+
+.pt-5 {
+    padding-top: 5rem !important;
+}
+
+.mt-5 {
+    margin-top: 5rem !important;
+}
+
+/* Form Styles */
+.form-container {
+    margin: auto;
+    padding: 40px;
+    max-width: 400px;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(46, 46, 44, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #2E2E2C;
+    text-align: center;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #2E2E2C;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2E2E2C;
+    color: #EBEBEB;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container button:hover {
+    background-color: #1D1D1B;
+}
+
+.form-container .link {
+    color: #2E2E2C;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-container .link:hover {
+    text-decoration: underline;
+}
+
+.form-control {
+    margin: 10px !important; 
+}
+
+.btn {
+    color: white;
+}
+
+.footer .text-muted {
+    color: black !important;
+}
+
+.mySchedule {
+    padding-top: 80px !important;
+}
